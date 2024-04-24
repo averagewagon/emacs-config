@@ -7,17 +7,19 @@
 	 corfu
 	 vertico
 	 marginalia
-	 orderless))
+	 orderless
+	 magit))
 
 (setq package-native-compile t)
 
+;; Portability - if my packages aren't all installed, go install them
 (unless (seq-every-p #'package-installed-p package-selected-packages)
   (package-refresh-contents)
   (package-install-selected-packages t))
 
+;; Custom dark theme
 (load-theme 'modus-vivendi t)
 
-;; TODO: Configure these
 (which-key-mode)
 (vertico-mode)
 (marginalia-mode)
@@ -28,8 +30,11 @@
       completion-category-defaults nil)
 (global-corfu-mode)
 
+;; Smooth-scrolling
+(pixel-scroll-precision-mode 1)
+(setq pixel-scroll-precision-large-scroll-height 10.0)
+
 ;; TODO: Investigation additional packages
-;; magit
 ;; dired-sidebar
 ;; centaur-tabs
 ;; gcmh
