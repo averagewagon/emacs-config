@@ -8,7 +8,8 @@
 	 vertico
 	 marginalia
 	 orderless
-	 magit))
+	 magit
+	 treemacs))
 
 (setq package-native-compile t)
 
@@ -20,6 +21,7 @@
 ;; Custom dark theme
 (load-theme 'modus-vivendi t)
 
+;; Discovery helpers
 (which-key-mode)
 (vertico-mode)
 (marginalia-mode)
@@ -33,6 +35,12 @@
 ;; Smooth-scrolling
 (pixel-scroll-precision-mode 1)
 (setq pixel-scroll-precision-large-scroll-height 10.0)
+
+(require 'project)
+
+;; Project folder viewer
+(require 'treemacs)
+(global-set-key (kbd "C-x t t") #'treemacs)  ; Keybinding to toggle Treemacs
 
 ;; TODO: Investigation additional packages
 ;; dired-sidebar
