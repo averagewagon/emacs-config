@@ -24,6 +24,12 @@
 ;; Enable CUA mode
 (cua-mode t)
 
+;; Creaate a function "pin-buffer" to prevent buffers from replacing this one
+(defun pin-buffer ()
+  "Toggle whether current window is dedicated to its buffer."
+  (interactive)
+  (set-window-dedicated-p (selected-window) (not (window-dedicated-p))))
+
 ;; Discovery helpers
 (which-key-mode)
 (vertico-mode)
