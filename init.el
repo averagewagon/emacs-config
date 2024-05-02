@@ -21,6 +21,9 @@
 ;; Custom dark theme
 (load-theme 'modus-vivendi t)
 
+;; Enable CUA mode
+(cua-mode t)
+
 ;; Discovery helpers
 (which-key-mode)
 (vertico-mode)
