@@ -27,9 +27,14 @@
 
 ;; Creaate a function "pin-buffer" to prevent buffers from replacing this one
 (defun pin-buffer ()
-  "Toggle whether current window is dedicated to its buffer."
+  "Pin the current window so it's dedicated to its buffer."
   (interactive)
-  (set-window-dedicated-p (selected-window) (not (window-dedicated-p))))
+  (set-window-dedicated-p (selected-window) t))
+
+(defun unpin-buffer ()
+  "Free the current window so it is no longer dedicated to its buffer."
+  (interactive)
+  (set-window-dedicated-p (selected-window) nil))
 
 ;; Discovery helpers
 (which-key-mode)
