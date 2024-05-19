@@ -9,7 +9,8 @@
 	 marginalia
 	 orderless
 	 magit
-	 treemacs))
+	 treemacs
+	 vterm))
 
 (setq package-native-compile t)
 
